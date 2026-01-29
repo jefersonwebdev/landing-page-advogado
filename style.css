@@ -34,7 +34,7 @@ body {
     display: flex;
     align-items: center;
 
-    background-image: url(/img/hero-background.png);
+    background-image: url(./img/hero-background.png);
 }
 
 .hero-content {
@@ -399,7 +399,7 @@ body {
     color: #fff;
     overflow: hidden;
 
-    background-image: url(/img/sobre-nos.png);
+    background-image: url(./img/sobre-nos.png);
     background-position: center center;
     background-size: cover;
 }
@@ -510,7 +510,7 @@ body {
     padding: 100px 0;
     color: #fff;
 
-    background-image: url(/img/o-processo-da-sua-defesa.png);
+    background-image: url(./img/o-processo-da-sua-defesa.png);
     background-position: center center;
     background-size: cover;
 }
@@ -625,7 +625,7 @@ body {
     padding: 100px 0;
     position: relative;
 
-    background-image: url(/img/atendemos-em-todo-brasil.png);
+    background-image: url(./img/atendemos-em-todo-brasil.png);
     background-position: center center;
     background-size: cover;
 }
