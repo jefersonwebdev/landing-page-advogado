@@ -44,15 +44,25 @@ body {
 }
 
 .hero-content img {
-    width: 58%;
+    max-width: 100%;
 }
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--gold);
-    margin: 20px 0;
+    margin: 10px 0;
+    line-height: 1.1;
 }
+
+.hero-content h2 {
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+.hero-content p {
+        font-size: 13px;
+    }
 
 .btn-primary {
     display: inline-block;
@@ -67,6 +77,38 @@ body {
     transition: 0.3s;
     width: 100%;
     text-align: center;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .hero {
+    
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    align-items: start;
+
+    background-image: url(./img/hero-mobile.png);
+    background-position: center center;
+    min-height: 800px;
+    }
+
+    .hero-content {
+        padding: 0;
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .hero-content img {
+        max-width: 73%;
+    }
 }
 
 /* Grid System */
@@ -418,6 +460,33 @@ body {
     font-size: 12px;
 }
 
+
+.carousel-track-container {
+    overflow: hidden; /* Esconde os cards que saem da tela */
+    width: 100%;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px; /* Espaço entre os cards */
+    transition: transform 0.5s ease-in-out; /* Suavidade no movimento */
+    will-change: transform;
+}
+
+.card-google {
+    flex: 0 0 calc(33.333% - 20px); /* Exibe 3 cards por vez no desktop */
+    min-width: 300px; /* Garante que não fiquem esmagados no mobile */
+}
+
+@media (max-width: 768px) {
+    .card-google {
+        flex: 0 0 100%; /* Exibe 1 card por vez no celular */
+    }
+}
+
+
+
 .sobre-nos {
     background: linear-gradient(to right, #000 60%, #1a150c 100%); /* Gradiente sutil para o fundo */
     padding: 100px 0;
@@ -528,6 +597,18 @@ body {
     .sobre-imagem img {
         max-width: 100%;
     }
+
+    .sobre-nos {
+    background: linear-gradient(to right, #000 60%, #1a150c 100%); /* Gradiente sutil para o fundo */
+    padding: 100px 0;
+    color: #fff;
+    overflow: hidden;
+
+    background-image: url(./img/sobre-mobile.png);
+    background-position: center center;
+    background-size: cover;
+    min-height: 1429px;
+}
 }
 
 .passo-a-passo {
@@ -673,7 +754,7 @@ body {
 .mapa-bg { flex: 1; opacity: 0.3; }
 .img-mapa { max-width: 100%; }
 
-.conteudo-atendimento { flex: 1; }
+.conteudo-atendimento { flex:1; }
 
 .badge-atendimento {
     border: 1px solid #c5a059;
@@ -681,6 +762,7 @@ body {
     font-size: 12px;
     color: #fff;
     letter-spacing: 2px;
+    width: fit-content;
 }
 
 .conteudo-atendimento h2 {
@@ -688,6 +770,63 @@ body {
     color: #f2d5a0;
     font-size: 32px;
     margin: 20px 0;
+}
+
+.conteudo-atendimento p {
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+    .conteudo-atendimento { 
+        flex:auto
+    }
+
+    .atendimento-nacional {
+    background-color: #0a0a0a;
+    padding: 20px 0;
+    position: relative;
+
+    background-image: url(./img/atendemos-em-todo-brasil-mobile.png);
+    background-position: center center;
+    background-size: cover;
+    min-height: 900px;
+    align-content: end;
+    }
+
+    .container-atendimento {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    }
+
+    .badge-atendimento {
+    border: 1px solid #c5a059;
+    padding: 10px;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    }
+
+    .conteudo-atendimento h2 {
+    font-family: 'Playfair Display', serif;
+    color: #f2d5a0;
+    font-size: 26px;
+    margin: 20px 0;
+    line-height: 1.1;
+    }
+
+    .conteudo-atendimento p {
+        margin-bottom: 10px;
+    }
+
+    .btn-verde-whatsapp {
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+    }
 }
 
 /* FAQ (Acordeão) */
@@ -754,6 +893,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     color: #c5a059;
+    line-height: 1.1;
 }
 
 .accordion {
@@ -796,6 +936,93 @@ body {
 }
 
 .accordion-item.active .icon { transform: rotate(180deg); }
+
+
+/* Container Geral */
+.faq-section {
+    background-color: #ffffff;
+    padding: 80px 20px;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-subtitle {
+    color: #c5a059;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.faq-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #c5a059;
+}
+
+/* Acordeão */
+.accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 22px;
+    background-color: #f4f4f4; /* Cinza claro do modelo */
+    color: #c5a059;            /* Dourado das perguntas */
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: #ebebeb;
+}
+
+/* Ícone de seta */
+.accordion-button .icon {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Conteúdo da Resposta */
+.accordion-content {
+    max-height: 0; /* Escondido */
+    overflow: hidden;
+    background-color: #fff;
+    transition: max-height 0.4s ease-out, padding 0.3s ease;
+}
+
+.accordion-content p {
+    padding: 0 22px 22px 22px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Estado Ativo (Aberto) */
+.accordion-item.active .accordion-content {
+    max-height: 500px; /* Altura suficiente para o texto */
+}
+
+.accordion-item.active .accordion-button .icon {
+    transform: rotate(180deg); /* Inverte a seta */
+}
 
 /* Footer Styles */
 .main-footer {
@@ -865,7 +1092,7 @@ body {
 .footer-column h3 {
     color: #c5a059; /* Dourado */
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 27px;
     margin-bottom: 25px;
     font-weight: 400;
 }
@@ -875,7 +1102,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .footer-icon {
@@ -884,7 +1111,7 @@ body {
 }
 
 .footer-item p {
-    font-size: 14px;
+    font-size: 16px;
     color: #e0e0e0;
     line-height: 1.6;
 }
@@ -896,6 +1123,12 @@ body {
     letter-spacing: 2px;
     color: #c5a059;
     margin-top: 10px;
+   
+    max-width: 100%;
+}
+
+.footer-logo-box img {
+    max-width: 100%;
 }
 
 /* Faixa Inferior Legal */
@@ -907,6 +1140,10 @@ body {
     align-items: center;
     font-size: 12px;
     color: #888;
+}
+
+.footer-legal p, a {
+    font-size: 15px;
 }
 
 .privacy-link {
@@ -933,6 +1170,12 @@ body {
     align-items: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     z-index: 1000;
+    color: #fff;
+}
+
+.whatsapp-float i {
+    color: #fff;
+    font-size: 32px;
 }
 
 .notification-badge {
@@ -961,4 +1204,13 @@ body {
     .footer-item {
         justify-content: center;
     }
+
+    .footer-logo-box img {
+    max-width: 72%;
+}
+
+.footer-legal  {
+    display: inline-block;
+    text-align: center;
+}
 }
